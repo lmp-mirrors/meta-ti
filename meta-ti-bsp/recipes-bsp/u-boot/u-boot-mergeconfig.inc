@@ -9,7 +9,7 @@ uboot_configure:append () {
 uboot_configure_config:append () {
 
    if [ -n "${UBOOT_CONFIG_FRAGMENTS}" ]; then
-       oe_runmake -C ${S} O=${B}/${config} ${config_make_opts} ${UBOOT_MAKE_OPTS} ${config} ${UBOOT_CONFIG_FRAGMENTS}
-       oe_runmake -C ${S} O=${B}/${config} ${config_make_opts} ${UBOOT_MAKE_OPTS} olddefconfig
+       oe_runmake -C ${S} O=${B}/${builddir} ${config_make_opts} ${UBOOT_MAKE_OPTS} ${config} ${UBOOT_CONFIG_FRAGMENTS}
+       oe_runmake -C ${S} O=${B}/${builddir} ${config_make_opts} ${UBOOT_MAKE_OPTS} olddefconfig
    fi
 }
